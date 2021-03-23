@@ -33,6 +33,9 @@ export class BetService {
         })
     }
 
+    /**
+     * Update all bets with the provided result
+     */
     async settleBet({ selection_id, result }: SettleBetParams) {
         this.betRepository.createQueryBuilder().update().set({ status: result }).where({ selection_id }).execute()
     }
